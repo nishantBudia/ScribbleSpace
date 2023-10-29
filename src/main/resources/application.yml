@@ -1,0 +1,16 @@
+
+  spring:
+    datasource:
+      url: jdbc:mysql:${SCRIBBLE_SPACE_DATABASE_URL}
+      password: ${MYSQL_PASSWORD}
+      username: ${MYSQL_USERNAME}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+      show-sql: true
+      generate-ddl: true
+      hibernate:
+        ddl-auto: update
+
+
+
+
