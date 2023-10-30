@@ -12,7 +12,7 @@ public class MailingService {
     @Autowired
     JavaMailSender mailSender;
 
-    private final String host = "http://13.232.167.25:8080";
+    private final String host = "http://3.7.70.154:8080";
 
     private final String sender = "com.nishant.application@gmail.com";
 
