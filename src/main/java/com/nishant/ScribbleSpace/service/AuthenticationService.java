@@ -48,7 +48,7 @@ public class AuthenticationService {
         ApplicationUser user = userRepo.findByUsername(email);
         if(user.getEmailVerificationToken().getId().equals(token)){
             user.setEnabled(true);
-            return "Verification success, please proceed to login";
+            return userRepo.save(user).toString();
         }
         else{
             userRepo.deleteById(user.getId());
