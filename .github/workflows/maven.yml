@@ -17,6 +17,13 @@ jobs:
     runs-on: self-hosted
     environment: main
 
+    env:
+      AUTO_MAIL_SENDER_ADDRESS: ${{secrets.AUTO_MAIL_SENDER_ADDRESS}}
+      AUTO_MAIL_SENDER_PASSWORD: ${{secrets.AUTO_MAIL_SENDER_PASSWORD}}
+      MYSQL_PASSWORD: ${{secrets.MYSQL_PASSWORD}}
+      DB_MYSQL_USERNAME: ${{secrets.USERNAME_MYSQL}}
+      SCRIBBLE_SPACE_DATABASE_URL: ${{secrets.SCRIBBLE_SPACE_DATABASE_URL}}
+
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
@@ -26,6 +33,12 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Check envs
-        run: echo $DB_MYSQL_USERNAME
+        run: echo env.DB_MYSQL_USERNAME
       - name: Build with Maven
         run: mvn -B package --file pom.xml
+        env:
+          AUTO_MAIL_SENDER_ADDRESS: ${{secrets.AUTO_MAIL_SENDER_ADDRESS}}
+          AUTO_MAIL_SENDER_PASSWORD: ${{secrets.AUTO_MAIL_SENDER_PASSWORD}}
+          MYSQL_PASSWORD: ${{secrets.MYSQL_PASSWORD}}
+          DB_MYSQL_USERNAME: ${{secrets.MYSQL_USERNAME}}
+          SCRIBBLE_SPACE_DATABASE_URL: ${{secrets.SCRIBBLE_SPACE_DATABASE_URL}}
