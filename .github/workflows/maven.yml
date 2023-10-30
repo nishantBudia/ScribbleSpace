@@ -34,7 +34,7 @@ jobs:
           cache: maven
       - name: Check envs
         if: env.DB_MYSQL_USERNAME == 'Nishant'
-        run: Working
+        run: echo Working
       - name: Build with Maven
         run: mvn -B package --file pom.xml
         env:
