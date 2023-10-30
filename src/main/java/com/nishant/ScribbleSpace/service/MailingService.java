@@ -12,7 +12,7 @@ public class MailingService {
     @Autowired
     JavaMailSender mailSender;
 
-    private final String host = "http://localhost:8080";
+    private final String host = "http://"+System.getenv("BACKEND_IP_ADDRESS")+":8080";
 
     private final String sender = System.getenv("AUTO_MAIL_SENDER_ADDRESS");
 
