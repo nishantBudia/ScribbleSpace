@@ -15,6 +15,14 @@ on:
 jobs:
   build:
     runs-on: self-hosted
+    environment: main
+
+    env:
+      AUTO_MAIL_SENDER_ADDRESS: ${{secrets.AUTO_MAIL_SENDER_ADDRESS}}
+      AUTO_MAIL_SENDER_PASSWORD: ${{secrets.AUTO_MAIL_SENDER_PASSWORD}}
+      MYSQL_PASSWORD: ${{secrets.MYSQL_PASSWORD}}
+      DB_MYSQL_USERNAME: ${{secrets.USERNAME_MYSQL}}
+      SCRIBBLE_SPACE_DATABASE_URL: ${{secrets.SCRIBBLE_SPACE_DATABASE_URL}}
 
     steps:
       - uses: actions/checkout@v3
