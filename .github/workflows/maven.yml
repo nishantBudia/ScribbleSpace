@@ -14,8 +14,9 @@ on:
 
 jobs:
   build:
+  
     runs-on: self-hosted
-
+    
     steps:
       env:
         AUTO_MAIL_SENDER_ADDRESS: ${{secrets.AUTO_MAIL_SENDER_ADDRESS}}
