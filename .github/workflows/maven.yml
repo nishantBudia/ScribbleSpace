@@ -43,3 +43,6 @@ jobs:
           MYSQL_PASSWORD: ${{secrets.MYSQL_PASSWORD}}
           DB_MYSQL_USERNAME: ${{secrets.MYSQL_USERNAME}}
           SCRIBBLE_SPACE_DATABASE_URL: ${{secrets.SCRIBBLE_SPACE_DATABASE_URL}}
+      - name: Run jar file
+        run: sudo kill -9 `sudo lsof -t -i:8080` & sudo java -jar /home/ubuntu/actions-runner/_work/ScribbleSpace/ScribbleSpace/target/ScribbleSpace-0.0.1-SNAPSHOT.jar
+
