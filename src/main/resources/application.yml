@@ -3,7 +3,7 @@
     datasource:
       url: jdbc:mysql://13.232.157.56:3306/scribble_space
       password: Sh73shfbl
-      username: ${MYSQL_USERNAME}
+      username: ${USERNAME_MYSQL}
       driver-class-name: com.mysql.cj.jdbc.Driver
     jpa:
       show-sql: true
