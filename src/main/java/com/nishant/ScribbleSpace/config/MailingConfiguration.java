@@ -10,8 +10,8 @@ import java.util.Properties;
 @Configuration
 public class MailingConfiguration {
 
-    private final String email = System.getenv("com.nishant.application@gmail.com");
-    private final String password = System.getenv("yzgzqcschsckldgp");
+    private final String email = "com.nishant.application@gmail.com";
+    private final String password = "yzgzqcschsckldgp";
     @Bean
     public JavaMailSender mailSender(){
 
