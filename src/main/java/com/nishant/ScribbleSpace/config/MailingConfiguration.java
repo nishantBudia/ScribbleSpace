@@ -10,8 +10,8 @@ import java.util.Properties;
 @Configuration
 public class MailingConfiguration {
 
-    private final String email = System.getenv("AUTO_MAIL_SENDER_ADDRESS");
-    private final String password = System.getenv("AUTO_MAIL_SENDER_PASSWORD");
+    private final String email = System.getenv("com.nishant.application@gmail.com");
+    private final String password = System.getenv("yzgzqcschsckldgp");
     @Bean
     public JavaMailSender mailSender(){
 

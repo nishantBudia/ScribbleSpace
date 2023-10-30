@@ -12,9 +12,9 @@ public class MailingService {
     @Autowired
     JavaMailSender mailSender;
 
-    private final String host = "http://"+System.getenv("BACKEND_IP_ADDRESS")+":8080";
+    private final String host = "http://43.204.101.41:8080";
 
-    private final String sender = System.getenv("AUTO_MAIL_SENDER_ADDRESS");
+    private final String sender = System.getenv("com.nishant.application@gmail.com");
 
     public String sendUserVerificationEmail(String recipient, String token){
         SimpleMailMessage message = new SimpleMailMessage();
