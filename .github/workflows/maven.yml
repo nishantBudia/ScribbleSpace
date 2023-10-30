@@ -18,6 +18,12 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      env:
+        AUTO_MAIL_SENDER_ADDRESS: ${{secrets.AUTO_MAIL_SENDER_ADDRESS}}
+        AUTO_MAIL_SENDER_PASSWORD: ${{secrets.AUTO_MAIL_SENDER_PASSWORD}}
+        MYSQL_PASSWORD: ${{secrets.MYSQL_PASSWORD}}
+        MYSQL_USERNAME: ${{secrets.MYSQL_USERNAME}}
+        SCRIBBLE_SPACE_DATABASE_URL: ${{secrets.SCRIBBLE_SPACE_DATABASE_URL}}
     - uses: actions/checkout@v3
     - name: Set up JDK 17
       uses: actions/setup-java@v3
