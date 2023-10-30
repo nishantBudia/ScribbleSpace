@@ -31,6 +31,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+      - name: Check envs
+        run: echo $DB_MYSQL_USERNAME
       - name: Build with Maven
         run: mvn -B package --file pom.xml
         env:
