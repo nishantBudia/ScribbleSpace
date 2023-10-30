@@ -6,8 +6,6 @@
       username: Nishant
       driver-class-name: com.mysql.cj.jdbc.Driver
     jpa:
-      show-sql: true
-      generate-ddl: true
       hibernate:
         ddl-auto: update
 
