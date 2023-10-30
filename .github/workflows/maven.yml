@@ -33,7 +33,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Check envs
-        if: env.DB_MYSQL_USERNAME == 'Nishant'
+        if: env.DB_MYSQL_USERNAME == 'Nishant1'
         run: echo Working
       - name: Build with Maven
         run: mvn -B package --file pom.xml
