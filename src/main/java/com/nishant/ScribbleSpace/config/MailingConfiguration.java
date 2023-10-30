@@ -17,6 +17,8 @@ public class MailingConfiguration {
 
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 
+        System.out.println(email);
+
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(465);
         Properties prop = mailSender.getJavaMailProperties();
