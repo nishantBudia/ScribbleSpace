@@ -1,6 +1,7 @@
 package com.nishant.ScribbleSpace.service;
 
 import com.nishant.ScribbleSpace.model.Post;
+import com.nishant.ScribbleSpace.repo.PostGenreRepo;
 import com.nishant.ScribbleSpace.repo.PostRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -14,7 +15,11 @@ public class PostService {
     @Autowired
     PostRepo postRepo;
 
+    @Autowired
+    PostGenreRepo postGenreRepo;
+
     public Post createPost(Post post){
+        postGenreRepo.saveAll(post.getPostGenres());
         return postRepo.save(post);
     }
 
