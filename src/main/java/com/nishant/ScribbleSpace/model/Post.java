@@ -29,7 +29,7 @@ public class Post {
     @NotNull
     private String body;
 
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private List<PostGenre> postGenres;
 
     @NotNull
