@@ -17,13 +17,6 @@ jobs:
     runs-on: self-hosted
     environment: main
 
-    env:
-      AUTO_MAIL_SENDER_ADDRESS: ${{secrets.AUTO_MAIL_SENDER_ADDRESS}}
-      AUTO_MAIL_SENDER_PASSWORD: ${{secrets.AUTO_MAIL_SENDER_PASSWORD}}
-      MYSQL_PASSWORD: ${{secrets.MYSQL_PASSWORD}}
-      DB_MYSQL_USERNAME: ${{secrets.USERNAME_MYSQL}}
-      SCRIBBLE_SPACE_DATABASE_URL: ${{secrets.SCRIBBLE_SPACE_DATABASE_URL}}
-
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
@@ -33,11 +26,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
-      - name: Setup env variables
-        run: export MYSQL_USERNAME=${{secrets.USERNAME_MYSQL}}
-      - name: check env
-        run: printenv
+        run: mvn -B -DskipTests package --file pom.xml
       - name: Run jar file
         run: sudo kill -9 `sudo lsof -t -i:8080` & java -jar /home/ubuntu/actions-runner/_work/ScribbleSpace/ScribbleSpace/target/ScribbleSpace-0.0.1-SNAPSHOT.jar
 

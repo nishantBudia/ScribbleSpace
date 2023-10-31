@@ -14,7 +14,7 @@ public class MailingService {
 
     private final String host = "http://3.7.70.154:8080";
 
-    private final String sender = "com.nishant.application@gmail.com";
+    private final String sender = System.getenv("AUTO_MAIL_SENDER_ADDRESS");
 
     public String sendUserVerificationEmail(String recipient, String token){
         SimpleMailMessage message = new SimpleMailMessage();
