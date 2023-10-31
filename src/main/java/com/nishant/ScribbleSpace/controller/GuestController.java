@@ -72,4 +72,9 @@ public class GuestController {
             return guestService.getAllCommentsForPostPaginated(id,pageNumber);
         }
     }
+
+    @GetMapping("database-url")
+    public String getDBUrl(){
+        return System.getenv("SCRIBBLE_SPACE_DATABASE_URL");
+    }
 }
