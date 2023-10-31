@@ -10,6 +10,7 @@ import java.util.List;
 
 @Repository
 public interface PostRepo extends JpaRepository<Post,Long> {
+    List<Post> findByPostGenres_GenreInOrderByCreationTimeStampDesc(Collection<String> genres, Pageable pageable);
     List<Post> findByOwner_IdIn(Collection<Long> ids, Pageable pageable);
     List<Post> findByPostGenres_GenreOrderByCreationTimeStampAsc(String genre, Pageable pageable);
     boolean existsByOwner_IdAndId(Long id, Long id1);

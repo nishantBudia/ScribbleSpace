@@ -8,6 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -42,7 +43,8 @@ public class PostService {
     }
 
     public List<Post> getPostsByGenrePaginated(String genre, Integer pageNumber) {
-        return postRepo.findByPostGenres_GenreOrderByCreationTimeStampAsc(genre, PageRequest.of(pageNumber,10));
+        //return postRepo.findByPostGenres_GenreOrderByCreationTimeStampAsc(genre, PageRequest.of(pageNumber,10));
+        return postRepo.findByPostGenres_GenreInOrderByCreationTimeStampDesc(Collections.singleton(genre), PageRequest.of(pageNumber,10));
     }
 
     public List<Post> getPostsForUsersPaginated(List<Long> followingIds, Integer pageNumber) {
