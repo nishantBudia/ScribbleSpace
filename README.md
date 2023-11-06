@@ -28,7 +28,7 @@ This section outlines implementation of the layers.
 
 
  ## Controller
-   Complete Controller Documentation can be viewed on the swagger ui for best experience: http://3.7.70.154:8080/swagger-ui/index.html#/
+   Complete Controller Documentation can be viewed on the swagger ui for best experience: http://3.110.191.185/swagger-ui/index.html#/
 
 ![img_1.png](img_1.png)
 ![img_2.png](img_2.png)
